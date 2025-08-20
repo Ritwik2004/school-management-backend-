@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import schoolsRouter from "./routes/school.routes.js";
+import schoolsRouter from "./src/routes/school.routes.js";
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: "1mb" }));
