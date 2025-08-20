@@ -20,18 +20,13 @@ A simple backend service built with **Node.js, Express, and PostgreSQL (Neon)** 
 /project-root
  ├── src/
  │   ├── controllers/
- │   │   └── controller.js              # API controllers
+ │   │   └── controller.js     # API controllers
  │   ├── database/
- │   │   └── db.js                      # Neon DB connection
- │   ├── routes/
- │   │   └── routes.js                  # Express routes
- │   ├── utils/
- │   │   └── distance.js                # Express routes
- │   ├── validator/
- │   │   └── school.validator.js        # Express routes
- │   ├── server.js                      # Express server entry
- │        
+ │   │   └── db.js             # Neon DB connection
+ │   └── routes/
+ │       └── routes.js         # Express routes
  ├── package.json
+ ├── server.js                 # Express server entry
  └── README.md
 ```
 
@@ -90,11 +85,23 @@ npm run dev
 
 Server will be running at: **http://localhost:3000**
 
-## 📌 API Endpoints
+## 🌐 Live Demo
+
+The API is deployed and ready to use at:  
+**Base URL:** `https://school-management-backend-theta.vercel.app/`
+
+### Quick Test:
+- **Add School:** `POST https://school-management-backend-theta.vercel.app/routes/addSchool`
+- **List Schools:** `GET https://school-management-backend-theta.vercel.app/routes/listSchools?lat=28.7041&lng=77.1025`
+
+---
+
+**Base URL:** `https://school-management-backend-theta.vercel.app/`
 
 ### 1. Add School
 
-**Endpoint:** `POST /schools`
+**Endpoint:** `POST /routes/addSchool`  
+**Full URL:** `https://school-management-backend-theta.vercel.app/routes/addSchool`
 
 **Request Body (JSON):**
 ```json
@@ -129,13 +136,14 @@ Server will be running at: **http://localhost:3000**
 
 ### 2. List Schools by Distance
 
-**Endpoint:** `GET /schools?lat={latitude}&lng={longitude}`
+**Endpoint:** `GET /routes/listSchools?lat={latitude}&lng={longitude}`  
+**Full URL:** `https://school-management-backend-theta.vercel.app/routes/listSchools?lat={latitude}&lng={longitude}`
 
 **Query Parameters:**
 - `lat` (required): User's latitude
 - `lng` (required): User's longitude
 
-**Example:** `GET /schools?lat=28.7041&lng=77.1025`
+**Example:** `GET https://school-management-backend-theta.vercel.app/routes/listSchools?lat=28.7041&lng=77.1025`
 
 **Response:**
 ```json
